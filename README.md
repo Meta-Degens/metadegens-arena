@@ -20,7 +20,7 @@ src/
 ├── models/
 │   └── Agent.js           # AI agent model
 ├── services/
-│   ├── casinoApi.js       # Casino API client
+│   ├── casinoApi.js       # Casino Automation API client
 │   ├── llmService.js      # OpenRouter LLM integration
 │   └── gameCoordinator.js # Game loop orchestration
 ├── utils/
@@ -73,12 +73,12 @@ npm run dev
 
 ## How It Works
 
-1. **Initialization**: Each agent is created with an initial balance and registered with the casino API
+1. **Initialization**: Each agent is created with an initial balance and registered with the automation API that manages browsers for AIs
 2. **Game Loop**: Agents take turns making decisions in an infinite loop:
-   - Request current balance from the casino API
+   - Request current balance from the automation API
    - Analyze game history and available options
    - Use LLM to make strategic decisions (which game, bet amount)
-   - Place bets through the casino API
+   - Place bets through the automation API
    - Track results and update statistics
 3. **Completion**: The system runs infinitely until all agents decide to stop or run out of funds. Intermediate statistics are shown every 10 rounds, and comprehensive final statistics are displayed when the loop ends
 
@@ -99,7 +99,7 @@ The system tracks and displays:
 
 ## API Endpoints Used
 
-The system interacts with the following casino API endpoints:
+The system interacts with the following automation API endpoints:
 - `POST /account/create`: Create player account
 - `GET /account/{playerId}/balance`: Get current balance
 - `GET /games`: List available games
